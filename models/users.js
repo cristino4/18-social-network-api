@@ -29,8 +29,15 @@ const userSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'user'
     }
-  ]
-});
+  ]},
+  {
+    toJSON: {
+      virtuals: true,
+      getters: true,
+    },
+    id: false,
+  }
+);
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;
