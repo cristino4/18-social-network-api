@@ -7,7 +7,7 @@ connection.on('error', (err) => err);
 
 connection.once('open', async () => {
     await Users.deleteMany();
-    await Users.insert+Many(userData);
+    await Users.insertMany(userData);
     console.log('data seeded');
     process.exit(0);
 })
