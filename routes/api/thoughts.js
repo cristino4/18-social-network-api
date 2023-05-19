@@ -77,8 +77,9 @@ router.delete('/:id', async (req,res) => {
                 {new: true}
             );
             res.json(update);
+        } else {
+            res.json({message: "thought deleted"})
         };
-        res.json({message: "thought deleted"})
     } catch (error) {
         console.error(error);
         res.status(500).json(error); 
